@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inherited_widget/favorites_store.dart';
+import 'package:inherited_widget/mycart.dart';
 import 'package:inherited_widget/smoothie.dart';
 
 class SmoothieRow extends StatelessWidget {
@@ -12,7 +12,7 @@ class SmoothieRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = FavoritesStore.of(context);
+    final state = MyCart.of(context);
 
     return Container(
         margin: const EdgeInsets.only(bottom: 16.0),
@@ -65,12 +65,12 @@ class SmoothieRow extends StatelessWidget {
             IconButton(
                 onPressed: () {
                   // ボタンをタップされた時にお気に入りの状態によって追加・削除を判断している
-                  state.favoritesSmoothies.contains(smoothie)
+                  state.smoothies.contains(smoothie)
                       ? state.remove(smoothie)
                       : state.insert(smoothie);
                 },
                 // お気に入り状態によって表示アイコンを変更している
-                icon: state.favoritesSmoothies.contains(smoothie)
+                icon: state.smoothies.contains(smoothie)
                     ? const Icon(Icons.check)
                     : const Icon(Icons.add)
             )

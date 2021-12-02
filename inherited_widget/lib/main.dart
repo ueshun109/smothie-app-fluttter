@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:inherited_widget/favorites_store.dart';
+import 'package:inherited_widget/mycart.dart';
 import 'home_page.dart';
 
 void main() {
-  runApp(const FavoritesStore(child: SmoothieApp()));
+  runApp(const MyCart(child: SmoothieApp()));
 }
 
 class SmoothieApp extends StatelessWidget {
